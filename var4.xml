@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="33" inline="false" x="33" y="27">
+  <block type="controls_whileUntil" id="33" inline="false" x="70" y="53">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
       <block type="sensor_button" id="49">
@@ -38,6 +38,54 @@
                             <field name="VAR">leftfrontobjectsensor</field>
                           </block>
                         </value>
+                        <next>
+                          <block type="variables_set" id="172" inline="true">
+                            <field name="VAR">leftfrontobjectsensor</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="188" inline="true">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="222">
+                                    <field name="VAR">leftfrontobjectsensor</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="198">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_setcursor" id="240" inline="true">
+                                <value name="STARTX">
+                                  <block type="math_number" id="243">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <value name="STARTY">
+                                  <block type="math_number" id="244">
+                                    <field name="NUM">20</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_drawtext" id="265">
+                                    <field name="TEXT">2x left front = </field>
+                                    <next>
+                                      <block type="oled_drawnumber" id="283" inline="true">
+                                        <value name="NUMBER">
+                                          <block type="variables_get" id="284">
+                                            <field name="VAR">leftfrontobjectsensor</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
                       </block>
                     </next>
                   </block>
