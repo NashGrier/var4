@@ -31,6 +31,15 @@
                 <next>
                   <block type="oled_drawtext" id="123">
                     <field name="TEXT">left front</field>
+                    <next>
+                      <block type="oled_drawnumber" id="168" inline="true">
+                        <value name="NUMBER">
+                          <block type="variables_get" id="147">
+                            <field name="VAR">leftfrontobjectsensor</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
