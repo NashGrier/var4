@@ -1,1 +1,43 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_whileUntil" id="33" inline="false" x="33" y="27">
+    <field name="MODE">WHILE</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="49">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="variables_set" id="57" inline="true">
+        <field name="VAR">leftfrontobjectsensor</field>
+        <value name="VALUE">
+          <block type="sensor_object" id="64">
+            <field name="OBJECT">LEFTFRONT</field>
+          </block>
+        </value>
+        <next>
+          <block type="oled_cleardisplay" id="73">
+            <next>
+              <block type="oled_setcursor" id="82" inline="true">
+                <value name="STARTX">
+                  <block type="math_number" id="89">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <value name="STARTY">
+                  <block type="math_number" id="96">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_drawtext" id="123">
+                    <field name="TEXT">left front</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
